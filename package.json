@@ -1,0 +1,30 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Boris Tikhomiroff",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boris-tikhomiroff/elevently-vite-template.git"
+  },
+  "scripts": {
+    "clean": "rm -rf _site",
+    "dev": "npm run clean && eleventy --config=.eleventy.cjs --serve --incremental",
+    "build": "npm run clean && eleventy --config=.eleventy.cjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-vite": "^4.0.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "html-minifier": "^4.0.0",
+    "prettier": "^3.0.3",
+    "pug": "^3.0.2",
+    "sass": "^1.67.0",
+    "vite-plugin-glslify": "^2.0.2",
+    "vite-plugin-pwa": "^0.16.5"
+  }
+}
