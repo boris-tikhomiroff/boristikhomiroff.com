@@ -1,8 +1,6 @@
 {
-  "name": "",
+  "name": "boristikhomiroff.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "author": "Boris Tikhomiroff",
   "license": "ISC",
   "repository": {
