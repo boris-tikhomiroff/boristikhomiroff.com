@@ -24,6 +24,9 @@
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
     "no-trailing-spaces": "error",
     "no-var": "error",
+    "no-nested-ternary": 1,
+    "no-template-curly-in-string": 1,
+    "no-self-compare": 1,
     "prefer-const": "error",
     "semi": ["error", "always"],
     "comma-spacing": ["error", { "before": false, "after": true }],
@@ -35,6 +38,7 @@
     "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
     "no-spaced-func": "error",
     "object-curly-spacing": ["error", "always"],
+    "prefer-template": "off",
     "prefer-arrow-callback": "error",
     "prefer-numeric-literals": "error",
     "prefer-rest-params": "error",
@@ -44,6 +48,9 @@
     "space-in-parens": ["error", "never"],
     "space-infix-ops": "error",
     "space-unary-ops": ["error", { "words": true, "nonwords": false }],
-    "switch-colon-spacing": "error"
-  }
+    "switch-colon-spacing": "error",
+    "arrow-body-style": 1
+  },
+  "ignorePatterns": ["dist", "node_modules", "vite.config.js", "_site"],
+  "plugins": ["prettier"]
 }

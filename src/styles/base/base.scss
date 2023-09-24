@@ -1,0 +1,15 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+  line-height: 1;
+}
+
+body {
+  // position: fixed;
+}
