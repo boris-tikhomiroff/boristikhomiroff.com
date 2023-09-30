@@ -1,0 +1,21 @@
+extends ../base.pug
+
+block variables
+    - var template = 'home'
+
+block content
+
+  .home
+    .home__wrapper
+    
+      .home__gallery
+        .home__gallery__wrapper
+          each media in home.data.gallery
+            a.home__gallery__links(href="#")
+              figure.home__gallery__media
+                img.home__gallery__media__image(data-src=media.product.data.image.url)
+              
+              h2.home__gallery__title=media.product.data.title
+
+      section.home__footer
+        .home__email Email

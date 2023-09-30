@@ -1,0 +1,76 @@
+.project {
+  @extend %page; // All the page muste have this mixins !
+  opacity: 0;
+}
+
+.project__wrapper {
+}
+
+.project__heading {
+  height: 100vh;
+  width: 100%;
+}
+
+.project__heading__media {
+  height: 72rem;
+  width: 192rem;
+  position: relative;
+}
+
+.project__heading__media__image {
+  @extend %cover;
+}
+
+.project__heading__title {
+  @extend %title-313;
+
+  position: absolute;
+  top: 59.6rem;
+  width: 153.8rem;
+  left: 19rem;
+  right: 19rem;
+  mix-blend-mode: overlay;
+}
+
+.project__heading__description {
+  font-size: 3.4rem;
+  width: 105.6rem;
+  position: absolute;
+  left: 19rem;
+  right: 19rem;
+  top: 86rem;
+}
+
+// ______
+
+.project__content {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.project__gallery__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.project__gallery__media {
+  width: 100.24rem;
+  position: relative;
+  height: 62.4rem;
+  margin-bottom: 18rem;
+}
+
+.project__gallery__media__image {
+  @extend %cover;
+
+  // object-fit: cover;
+}
+
+.project__content {
+  display: flex;
+  margin: 0 12rem;
+  width: 100%;
+}

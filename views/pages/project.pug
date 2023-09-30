@@ -1,0 +1,37 @@
+extends ../base.pug
+
+block variables
+    - var template = 'project'
+
+block content
+
+  .project
+    .project__wrapper
+    
+      section.project__heading 
+        figure.project__heading__media
+          img.project__heading__media__image(data-src=project.image.url, alt=project.image.alt)
+
+        h1.project__heading__title=project.title
+        p.project__heading__description=project.description
+
+      section.project__content 
+        .project__gallery
+          .project__gallery__wrapper
+            each media in project.gallery
+                figure.project__gallery__media
+                  img.project__gallery__media__image(data-src=media.image.url, alt=media.image.alt)
+
+        aside.project__aside
+          .project__aside__wrapper 
+            each highlight in project.highlights
+              .project__aside__content
+                .project__aside__content__title=highlight.highlights_category
+                .project__aside__content__text=highlight.highlights_text
+
+      section.project__next
+        .project__next__wrapper
+          .project__next__text (next)
+          .project__next__title=project.link.data.title
+
+

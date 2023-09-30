@@ -1,0 +1,72 @@
+.home {
+  @extend %page; // All the page muste have this mixins !
+  opacity: 0;
+}
+
+.home__wrapper {
+  @extend %cover;
+
+  overflow: hidden;
+}
+
+.home__gallery {
+  @extend %cover;
+
+  visibility: hidden;
+}
+
+.home__gallery__wrapper {
+  display: flex;
+  align-items: center;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+
+  width: 100%;
+}
+
+.home__gallery__links {
+  display: block;
+  margin: 0 50rem;
+
+  position: relative;
+}
+
+.home__gallery__media {
+  width: 100.24rem;
+  position: relative;
+  height: 62.4rem;
+}
+
+.home__gallery__media__image {
+  @extend %cover;
+
+  object-fit: cover;
+
+  opacity: 1;
+}
+
+.home__gallery__title {
+  // display: none;
+  @extend %title-313;
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  text-align: center;
+  width: 140rem;
+  mix-blend-mode: overlay;
+}
+
+.home__footer {
+  display: none;
+  position: absolute;
+  bottom: 4rem;
+  left: 4rem;
+}
+
+.home__email {
+  display: none;
+}

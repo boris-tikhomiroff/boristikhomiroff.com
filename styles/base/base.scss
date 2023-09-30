@@ -1,0 +1,61 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+  line-height: 1;
+
+  @extend %cover; // for scroll hijacking
+  position: fixed;
+
+  overflow: hidden; // Disabled macos bounce effect
+
+  // background-color: black;
+  color: whitesmoke;
+
+  @include media('<phone') {
+    font-size: calc(100vw / 750 * 10);
+  }
+}
+
+body {
+  @extend %text-16;
+
+  @extend %cover; // for scroll hijacking
+  position: fixed;
+
+  @include media('<phone') {
+    // color: red;
+  }
+}
+
+.content {
+  @extend %cover; // for scroll hijacking
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+button {
+  background-color: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  vertical-align: middle;
+
+  &.loaded {
+    opacity: 1;
+  }
+}

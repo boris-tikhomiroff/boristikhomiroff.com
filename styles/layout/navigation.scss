@@ -1,0 +1,34 @@
+.navigation {
+  @extend %cover;
+
+  z-index: z('navigation');
+}
+
+.navigation__link {
+  left: 4rem;
+  position: absolute;
+  top: 4rem;
+  font-size: 3rem;
+
+  // @include media('<phone') {
+  //   left: 5rem;
+  //   top: 5rem;
+  // }
+}
+
+.navigation__list {
+}
+
+.navigation__list__item {
+  right: 4rem;
+  position: absolute;
+  top: 4rem;
+
+  &:first-of-type {
+    right: 20rem;
+  }
+}
+
+.navigation__list__link {
+  font-size: 3rem;
+}

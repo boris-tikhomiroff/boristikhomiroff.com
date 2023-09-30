@@ -1,0 +1,37 @@
+@import './base/reset';
+
+// ------------------------------------
+// Utils
+// ------------------------------------
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/mixins';
+@import './utils/vendors';
+@import './utils/responsive';
+
+
+// ------------------------------------
+// Shared
+// ------------------------------------
+@import './shared/paragraphs';
+@import './shared/titles';
+@import './shared/pages';
+
+// ------------------------------------
+// Base
+// ------------------------------------
+@import './base/fonts';
+@import './base/base';
+
+// ------------------------------------
+// Components
+// ------------------------------------
+@import './components/preloader';
+@import './layout/navigation';
+
+// ------------------------------------
+// Pages
+// ------------------------------------
+@import './pages/home/home';
+@import './pages/project/project';
+

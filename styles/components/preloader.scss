@@ -1,0 +1,40 @@
+.preloader {
+  @extend %cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: z('preloader');
+
+  background-color: blue;
+  // display: none;
+}
+
+.preloader__text {
+  font-size: 0;
+  max-width: 66rem;
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  span span {
+    @extend %title-49;
+  }
+}
+
+.preloader__number {
+  bottom: 7.3rem;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 5rem;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+}
+
+.preloader__number__text {
+  display: inline-block;
+}
