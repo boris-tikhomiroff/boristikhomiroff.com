@@ -1,7 +1,7 @@
 import { each, map } from 'lodash'
 import GSAP from 'gsap'
 import Prefix from 'prefix'
-import NormalizeWheel from 'normalize-wheel'
+// import NormalizeWheel from 'normalize-wheel'
 
 import AsyncLoad from 'classes/AsyncLoad'
 
@@ -17,7 +17,7 @@ export default class Page {
 
     this.transformPrefix = Prefix('transform')
 
-    this.onMouseWheelEvent = this.onMouseWheel.bind(this)
+    // this.onMouseWheelEvent = this.onWheel.bind(this)
   }
 
   create() {
@@ -105,17 +105,17 @@ export default class Page {
   /**
    * Events.
    */
-  onMouseWheel(event) {
-    const { pixelY } = NormalizeWheel(event)
-
-    this.scroll.target += pixelY
-  }
-
   onResize() {
     if (this.elements.wrapper) {
       this.scroll.limit =
         this.elements.wrapper.clientHeight - window.innerHeight
     }
+  }
+
+  onWheel(normalized) {
+    const speed = normalized.pixelY
+
+    this.scroll.target += speed
   }
 
   /**
@@ -148,13 +148,9 @@ export default class Page {
   /**
    * Listeners.
    */
-  addEventListeners() {
-    window.addEventListener('mousewheel', this.onMouseWheelEvent)
-  }
+  addEventListeners() {}
 
-  removeEventListeners() {
-    window.removeEventListener('mousewheel', this.onMouseWheelEvent)
-  }
+  removeEventListeners() {}
 
   /**
    * Destroy.

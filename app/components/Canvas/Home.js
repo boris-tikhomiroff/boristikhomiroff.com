@@ -40,4 +40,12 @@ export default class Home {
   onResize(event) {
     map(this.medias, media => media.onResize(event))
   }
+
+  onTouchDown(event) {}
+
+  onTouchMove(event) {}
+
+  onTouchUp(event) {}
+
+  onWheel(event) {}
 }

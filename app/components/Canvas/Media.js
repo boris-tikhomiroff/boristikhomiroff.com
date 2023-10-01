@@ -50,33 +50,36 @@ export default class Media {
   }
 
   createBounds({ sizes }) {
+    this.sizes = sizes
+
     this.bounds = this.element.getBoundingClientRect()
 
     this.updateScale(sizes)
   }
 
-  updateScale({ height, width }) {
+  updateScale() {
     this.width = this.bounds.width / window.innerWidth
     this.height = this.bounds.height / window.innerHeight
 
-    this.mesh.scale.x = width * this.width
-    this.mesh.scale.y = height * this.height
+    this.mesh.scale.x = this.sizes.width * this.width
+    this.mesh.scale.y = this.sizes.height * this.height
 
     this.x = this.bounds.left / window.innerWidth
     this.y = this.bounds.top / window.innerHeight
   }
 
   updateX(x = 0) {
-    this.mesh.position.x = -width / 2 + this.mesh.scale.x / 2 + this.x * width
+    this.mesh.position.x =
+      -this.sizes.width / 2 + this.mesh.scale.x / 2 + this.x * this.sizes.width
   }
 
-  updateY(y = 0) {
-    this.mesh.position.y = height / 2 - this.mesh.scale.y / 2 - this.y * height
-  }
+  // updateY(y = 0) {
+  //   this.mesh.position.y =
+  //     this.sizes.height / 2 - this.mesh.scale.y / 2 - this.y * this.sizes.height
+  // }
 
   update(scroll) {
     this.updateX(scroll.x)
-    // this.updateY(scroll)
   }
 
   onResize(sizes) {
