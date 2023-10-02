@@ -13,6 +13,10 @@
   @extend %cover;
 
   visibility: hidden;
+
+  overflow: hidden;
+
+  width: 140.9rem + 250rem;
 }
 
 .home__gallery__wrapper {
@@ -22,7 +26,7 @@
   position: absolute;
   transform: translate(0%, -50%);
 
-  width: 100%;
+  // width: 100%;
 }
 
 .home__gallery__links {

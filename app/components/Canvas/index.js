@@ -10,12 +10,6 @@ export default class Canvas {
       end: 0,
     }
 
-    this.y = {
-      start: 0,
-      distance: 0,
-      end: 0,
-    }
-
     this.createRenderer()
     this.createCamera()
     this.createScene()
@@ -28,7 +22,6 @@ export default class Canvas {
   createRenderer() {
     this.renderer = new Renderer({
       alpha: true,
-      antialias: true,
     })
 
     this.gl = this.renderer.gl
@@ -82,52 +75,63 @@ export default class Canvas {
   onTouchDown(event) {
     this.isDown = true
 
-    const x = event.touches ? event.touches[0].clientX : event.clientX
-    const y = event.touches ? event.touches[0].clientY : event.clientY
+    this.x.start = event.touches ? event.touches[0].clientX : event.clientX
 
     if (this.home) {
-      this.home.onTouchDown({ x: this.x, y: this.y })
+      this.home.onTouchDown({
+        x: this.x,
+      })
     }
+
+    // console.log('down:', this.x)
   }
 
   onTouchMove(event) {
     if (!this.isDown) return
 
     const x = event.touches ? event.touches[0].clientX : event.clientX
-    const y = event.touches ? event.touches[0].clientY : event.clientY
 
     this.x.end = x
-    this.y.end = y
+
+    // this.x.distance = this.x.start - this.x.end
 
     if (this.home) {
-      this.home.onTouchMove({ x: this.x, y: this.y })
+      this.home.onTouchMove({
+        x: this.x,
+      })
     }
+
+    // console.log('move:', this.x)
   }
 
   onTouchUp(event) {
     this.isDown = false
 
-    const x = event.touches ? event.touches[0].clientX : event.clientX
-    const y = event.touches ? event.touches[0].clientY : event.clientY
+    const x = event.changedTouches
+      ? event.changedTouches[0].clientX
+      : event.clientX
 
     this.x.end = x
-    this.y.end = y
+
+    this.x.distance = this.x.start - this.x.end
 
     if (this.home) {
-      this.home.onTouchUp({ x: this.x, y: this.y })
+      this.home.onTouchUp({
+        x: this.x,
+      })
     }
   }
 
-  onWheel(event) {
-    if (this.home) {
-      this.home.onWheel(event)
-    }
-  }
+  onWheel(event) {}
 
   /**
    * Loop.
    */
   update() {
+    if (this.home && this.home.update) {
+      this.home.update()
+    }
+
     this.renderer.render({ scene: this.scene, camera: this.camera })
   }
 }
